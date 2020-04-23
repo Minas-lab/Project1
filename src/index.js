@@ -1,3 +1,31 @@
+// import "./scss/row.scss"
+
+import App from "./app";
+let root = document.getElementById("root")
+const app = new App();
+root.append(app.html);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import { admin } from "./app"
 // admin.btn.addEventListener("click", handler);
 // admin.inp.addEventListener("keydown", function(e) {
@@ -27,5 +55,5 @@
 // }
 
 
-import { ToDo } from "./app"
-let toDo = new ToDo()
+// import { ToDo } from "./app"
+// let toDo = new ToDo()

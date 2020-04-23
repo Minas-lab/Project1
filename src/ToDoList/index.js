@@ -4,7 +4,7 @@ export default class ToDoList {
 
         this.list = []
         this.addRow = this.addRow.bind(this)
-        this.removeFromlist = this.removeFromList.bind(this)
+        this.removeFromList = this.removeFromList.bind(this)
         this.todoBox = document.createElement("div");
         this.input = document.createElement("input");
         this.addButton = document.createElement("button")
@@ -19,17 +19,19 @@ export default class ToDoList {
 
     }
     removeFromList() {
-
+        this.list = this.list.filter(item => item["deleted"] != true)
     }
     addRow(arg) {
 
         const value = this.input.value
         if (value) {
-            console.log(value)
             this.input.value = ""
             const row = new Row(value, this.removeFromList);
+
+
             row.editBox.style.display = "none"
             this.list.unshift(row)
+            console.log(this.list)
             this.render()
         }
 

@@ -1,6 +1,7 @@
 export default class Row {
     constructor(value, removeCallback) {
         this.value = value
+        this.deleted = false
         this.remove = this.remove.bind(this, removeCallback);
         this.edit = this.edit.bind(this);
         this.save = this.save.bind(this)
@@ -31,8 +32,10 @@ export default class Row {
     remove(removeCallback, event) {
         console.log(arguments)
         console.log(removeCallback)
+        this.deleted = true
+        console.log(this)
         this._box.remove()
-        removeCallback && removeCallback()
+        removeCallback && removeCallback(this.deleted)
     }
     edit() {
         this._box.append(this.saveButton)

@@ -3,7 +3,9 @@
 import App from "./app";
 let root = document.getElementById("root")
 const app = new App();
+root.append(app.menuHtml)
 root.append(app.html);
+root.append(app.signupHtml);
 
 
 
